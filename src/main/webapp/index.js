@@ -3,7 +3,7 @@ $(document).ready(function() {
     $('#add-phone').usPhoneFormat({
         format: '(xxx) xxx-xxxx',
     });
-
+    
 	var dataTable = $('#dataTable');
 	fetchAll();
 	$('#add-button-submit').on('click', Save);
@@ -42,8 +42,7 @@ function Save() {
 		}).done(function() {
 			dataTable.reload();
 		}).fail(function(error) {
-			alert('Failed to save.' + error);
-			dialog.close();
+			 $("#errorModal").modal('show');
 		});
 	}
 }
@@ -71,8 +70,7 @@ function fetchAll() {
 					$(".btnDelete").bind("click", RowDelete);
 				}
 			}).fail(function(error) {
-		alert('Failed to fetch.');
-		dialog.close();
+				 $("#errorModal").modal('show');
 	});
 }
 
@@ -123,8 +121,7 @@ function Edit() {
 		}).done(function() {
 			dataTable.reload();
 		}).fail(function(error) {
-			alert('Failed to save.');
-			dialog.close();
+			 $("#errorModal").modal('show');
 		});
 	}
 }
@@ -140,8 +137,7 @@ function Delete(id) {
 	}).done(function() {
 		dataTable.reload();
 	}).fail(function(error) {
-		alert('Failed to delete');
-		dialog.close();
+		 $("#errorModal").modal('show');
 	});
 
 }

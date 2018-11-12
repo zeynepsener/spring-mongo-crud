@@ -5,7 +5,7 @@ package com.spring.service;
 
 import java.util.List;
 
-import com.spring.model.User;
+import com.spring.dto.UserDTO;
 
 /**
  * @author zeynep
@@ -13,9 +13,9 @@ import com.spring.model.User;
  */
 public interface UserService {
 
-	public List<User> listAll();
+	public List<UserDTO> listAll();
 
-	public void add(User user);
+	public void add(UserDTO dto);
 
 	public void delete(String id);
 
